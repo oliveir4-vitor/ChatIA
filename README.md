@@ -1,4 +1,4 @@
-# ChatIA - Assistente Técnico com IA
+# Assistente Técnico com IA
 
 
 MVP minimalista de um assistente de suporte técnico que conecta ao GEMINI para gerar respostas com base no que foi predefinido e guarda o histórico em MariaDB.
@@ -6,11 +6,15 @@ MVP minimalista de um assistente de suporte técnico que conecta ao GEMINI para 
 
 
 ## Tecnologias
-- FastAPI
-- SQLAlchemy
-- MariaDB
-- GEMINI
-- Docker
+![Python](https://img.shields.io/badge/Python-%23254f73.svg?style=for-the-badge&logo=python&logoColor=yellow)
+![FastAPI](https://img.shields.io/badge/fastapi-%23009485.svg?style=for-the-badge&logo=fastapi&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![MariaDB](https://img.shields.io/badge/mariadb-%234e629A.svg?style=for-the-badge&logo=mariadb&logoColor=%23c0765a) 
+![GEMINI](https://img.shields.io/badge/gemini-%23131313.svg?style=for-the-badge&logo=gemini&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%2300153c.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 ## Tree do projeto
 ```cmd
