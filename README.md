@@ -2,7 +2,7 @@
 
 
 MVP minimalista de um assistente de suporte técnico que conecta ao GEMINI para gerar respostas com base no que foi predefinido e guarda o histórico em MariaDB.
-[ChatIA](https://chatia.labs-code.com/chat)
+[Clique aqui para acessar o ChatIA](https://chatia.labs-code.com/chat)
 
 
 ## Tecnologias
