@@ -79,7 +79,7 @@ async def ask(request: Request, user_input: str = Form(...), db: Session = Depen
             ai_response = response.text
 ```
 
-### Model
+models.py
 ```python
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.sql import func
@@ -95,4 +95,19 @@ class Conversation(Base):
 
     def __repr__(self):
         return f"<Conversation(id={self.id}, user_input='{self.user_input[:20]}...')>"
+```
+requirements.txt
+```txt
+fastapi[standard]==0.112.0
+uvicorn[standard]==0.29.0
+SQLAlchemy==2.0.22
+pymysql==1.0.3
+jinja2==3.1.2
+python-dotenv==1.0.0
+openai==1.29.0
+alembic==1.11.1
+requests==2.31.0
+python-multipart>=0.0.7
+pydantic
+google-genai
 ```
