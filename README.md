@@ -1,8 +1,10 @@
 # Assistente Técnico com IA - (Projeto de portfólio)
 
 
-MVP minimalista de um assistente de suporte técnico que conecta ao GEMINI para gerar respostas com base no que foi predefinido e guarda o histórico em MariaDB.
-Bora interagir com o ChatIA? [Clique aqui para acessar o ChatIA](https://chatia.labs-code.com/chat)
+MVP minimalista de um assistente de suporte técnico que conecta a API da OpenAI para gerar respostas com base no que foi predefinido e guarda o histórico em MariaDB.
+Bora interagir com o ChatIA? \
+ChatIA: [clique aqui para acessar o ChatIA](https://chatia.labs-code.com/chat) \
+ChatIA Docs: [acesse a documentação do Chatia](https://chatia.labs-code.com/docs)
 
 
 
@@ -14,7 +16,7 @@ Bora interagir com o ChatIA? [Clique aqui para acessar o ChatIA](https://chatia.
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![MariaDB](https://img.shields.io/badge/mariadb-%234e629A.svg?style=for-the-badge&logo=mariadb&logoColor=%23c0765a) 
-![GEMINI](https://img.shields.io/badge/gemini-%23131313.svg?style=for-the-badge&logo=gemini&logoColor=white)
+![OPENAI](https://img.shields.io/badge/openai-%23131313.svg?style=for-the-badge&logo=openai&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%2300153c.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 ## Tree do projeto
