@@ -111,10 +111,9 @@ SQLAlchemy==2.0.22
 pymysql==1.0.3
 jinja2==3.1.2
 python-dotenv==1.0.0
-openai==1.29.0
+openai
 alembic==1.11.1
 requests==2.31.0
 python-multipart>=0.0.7
 pydantic
-google-genai
 ```
