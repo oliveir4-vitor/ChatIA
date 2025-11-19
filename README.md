@@ -44,41 +44,46 @@ ChatIA Docs: [acesse a documentação do Chatia](https://chatia.labs-code.com/do
 ```python
 @app.get("/", response_class=RedirectResponse)
 async def root():
-    """Redireciona a raiz para a página de chat."""
     return RedirectResponse(url="/chat", status_code=302)
+
 
 @app.get("/chat", response_class=HTMLResponse)
 async def chat_page(request: Request, db: Session = Depends(get_db)):
-    """Exibe a página principal do chat e carrega o histórico."""
-    # Note: O histórico está em ordem decrescente (mais recente primeiro)
-    history = crud.get_last_conversations(db, limit=50) 
+    history = crud.get_last_conversations(db, limit=50)
     return templates.TemplateResponse("index.html", {"request": request, "history": history})
 
 
 @app.post("/ask", response_class=HTMLResponse)
 async def ask(request: Request, user_input: str = Form(...), db: Session = Depends(get_db)):
-    """Recebe a pergunta do usuário, gera a resposta da IA e salva no banco de dados."""
-    
-    # Mensagem Padrão (Mock)
-    ai_response = "(Resposta mock) Sugestão: verifique os logs do servidor, reinicie o serviço e cheque permissões."
-    
-    # Tenta usar o modelo Gemini
+
+    ai_response = "(mock) Não foi possível acessar a OpenAI."
+
     if client:
         try:
-            # Define a persona e a entrada do usuário
-            prompt = f"Você é um assistente técnico experiente em infraestrutura de TI. Responda apenas à pergunta do usuário. \nPergunta do Usuário: {user_input}"
-            
-            # Chama o método de inferência do Gemini
-            response = client.models.generate_content(
-                model=GEMINI_MODEL,
-                contents=prompt,
-                config={
-                    "max_output_tokens": 1024 # Evita respostas muito longas
-                }
+            response = client.chat.completions.create(
+                model=OPENAI_MODEL,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "Você é um assistente técnico experiente em infraestrutura de TI. Responda de forma objetiva."
+                    },
+                    {
+                        "role": "user",
+                        "content": user_input
+                    }
+                ],
+                max_tokens=512
             )
-            
-            # Extrai o texto gerado
-            ai_response = response.text
+
+            ai_response = response.choices[0].message.content
+
+        except Exception as e:
+            print("ERRO OPENAI:", e)
+            ai_response = f"Erro ao consultar a OpenAI: {e}"
+
+    crud.save_conversation(db, user_input=user_input, ai_response=ai_response)
+
+    return RedirectResponse(url="/chat", status_code=303)
 ```
 
 models.py
